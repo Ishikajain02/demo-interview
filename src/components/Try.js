@@ -7,13 +7,7 @@ const Try = () => {
   const handleClick = (index) => {
     setActiveBox(index);
   };
-  /* const handleClick = (index) => {
-    // Create a new array to update the active state of the boxes
-    const newActiveBoxes = [...activeBoxes];
-    newActiveBoxes[index] = !newActiveBoxes[index];
-    setActiveBoxes(newActiveBoxes);
-  };
-*/
+ 
   return (
     <div className="relative w-64 h-64 border border-black ">
    
