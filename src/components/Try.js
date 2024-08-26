@@ -2,11 +2,21 @@ import React, { useState } from 'react';
 import Box from './Box';
 
 const Try = () => {
-  const [activeBox, setActiveBox] = useState(null);
+ /* const [activeBox, setActiveBox] = useState(null);
 
   const handleClick = (index) => {
     setActiveBox(index);
+  };*/
+  const [activeBoxes, setActiveBoxes] = useState(Array(7).fill(false));
+
+  const handleClick = (index) => {
+    setActiveBoxes((prev) => {
+      const newActiveBoxes = [...prev];
+      newActiveBoxes[index] = !newActiveBoxes[index];
+      return newActiveBoxes;
+    });
   };
+
  
   return (
     <div className="relative w-64 h-64 border border-black ">
@@ -16,7 +26,7 @@ const Try = () => {
           <Box
             key={i}
             index={i}
-            isActive={activeBox === i}
+            isActive={activeBoxes[i]}
             onClick={handleClick}
           />
         ))}
@@ -28,7 +38,7 @@ const Try = () => {
           <Box
             key={i}
             index={i}
-            isActive={activeBox === i}
+            isActive={activeBoxes[i]}
             onClick={handleClick}
           />
         ))}
@@ -40,7 +50,7 @@ const Try = () => {
           <Box
             key={i}
             index={i}
-            isActive={activeBox === i}
+            isActive={activeBoxes[i]}
             onClick={handleClick}
           />
         ))}
